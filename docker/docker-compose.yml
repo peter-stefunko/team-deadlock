@@ -1,0 +1,69 @@
+version: '3.9'
+name: 'deadlock'
+
+services:
+  frontend:
+    container_name: deadlock-fe
+    image: deadlock-fe
+    build:
+      context: ../frontend/
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    env_file:
+      - ../.env
+    volumes:
+      - ../frontend:/var/www/html
+      - ../frontend/caddy/Caddyfile:/etc/caddy/Caddyfile
+
+  backend:
+    container_name: deadlock-be
+    image: deadlock-be
+    build:
+      context: ../backend/
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ../.env
+    volumes:
+      - ../backend/:/app/
+    depends_on:
+      migrations:
+        condition: "service_completed_successfully"
+
+  db:
+    container_name: deadlock-db
+    image: deadlock-db
+    build:
+      context: ../backend/
+      dockerfile: ./db/Dockerfile
+    restart: always
+    env_file:
+      - ../.env
+    healthcheck:
+      test: pg_isready -U postgres
+      interval: 2s
+      timeout: 3s
+      retries: 10
+    ports:
+      - "4000:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  migrations:
+    restart: "no"
+    container_name: deadlock-migrations
+    image: deadlock-be
+    command: alembic upgrade head
+    env_file: ../.env
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ../backend/:/app/
+
+
+volumes:
+  db-data:

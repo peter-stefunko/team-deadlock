@@ -1,0 +1,159 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Index API</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="script.js" ></script>
+</head>
+<body>
+    <div class="navbar">
+        <ul id="navlist">
+            <li><img style="cursor: pointer;" width="326" height="" src="deadlocklogofinal.png" alt="Newsmatics logo"></li>
+            <li><div class="navbuttons">
+                <a class="navbuttonspace" id="menubutton">Menu</a>
+                <a id="menuimg" style="margin-left: 3px;"><img src="dropdown.png" alt="Line Three Horizontal" width="28" height="28"></a>
+            </div></li>
+        </ul>
+    </div>
+    <div class="main">
+        <p class="searchtitle">Semantic Deadlock Search</p>
+        <div class="search-container-wrapper">
+            <div class="search-container">
+          <button class="generate-button"><img width="30", height="30", src="spark.png"/></button>
+                <input type="text" class="search-input" placeholder="Fill in your search keywords">
+                <button class="search-button">Search News</button>
+            </div>
+            <a class="search-tips" style="text-decoration: underline; color: #3da12c; cursor: pointer;" 
+            onmouseover="showTooltip()" onmousemove="moveTooltip(event)" onmouseout="hideTooltip()">
+            Search tips
+         </a>
+         
+         <!-- Tooltip container -->
+         <div id="tooltip" class="tooltip">Search works based on <span style="color:#3da12c">content</span> rather than specific words.<br>Try describing what you're looking for and optionally select one <br>or more of the <span style="color:#3da12c">categories</span> below.</div>
+
+        </div>
+        <div class="categories">
+        <div class="category" onclick="selectCategory(this)">Politics</div>
+        <div class="category" onclick="selectCategory(this)">Sport</div>
+        <div class="category" onclick="selectCategory(this)">Games</div>
+        <div class="category" onclick="selectCategory(this)">Technology</div>
+        <div class="category" onclick="selectCategory(this)">Science</div>
+        <div class="category" onclick="selectCategory(this)">Entertainment</div>
+        <script>
+        function selectCategory(element) {
+          if (element.classList.contains('selected')) {
+            element.classList.remove('selected');
+
+          }else {
+            element.classList.add('selected');
+          }
+        }
+    </script>
+        </div>
+        <hr id="bighr"></hr>
+        <div class="news">
+            <div class="container">
+                <div class="sidebar">
+                    <div class="filter-section">
+                        <div class="filter-section">
+                            <h3 style="font-size: 24px; display: flex; align-items: center; justify-content: space-between;">
+                                Filters
+                                <div class="filter-buttons">
+                                    <button class="clear-filters"><span style="font-size: 19px;">×</span> Clear</button>
+                                    <button class="apply-filters">Apply</button>
+                                </div>
+                            </h3>
+                            </div>                                 
+                        <label class="filter-label">Start date</label>
+                        <br>
+                        <input class="date-filter" style="margin-top: 10px;" type="date">
+                        <br>
+                        <label class="filter-label">End date</label>
+                        <br>
+                        <input class="date-filter" style="margin-top: 10px;" type="date">
+                        <hr class="filter-hr">
+                    </div>
+                    <div class="label-section">
+                        <label class="filter-label" style="color:white">Labels <a id="numOfLabelsSelected"style="font-size: 12px;">(11)</a></label>
+                        <ul>
+                            <li class="left-wing label-item">
+                                <div class="label-box" id="left-wing"></div>
+                                <span style="color: #cecece;">Left-wing</span>
+                            </li>
+                            <li class="center-left label-item">
+                                <div class="label-box" id="center-left"></div>
+                                <span style="color: #cecece;">Center-left</span>
+                            </li>
+                            <li class="neutral label-item">
+                                <div class="label-box" id="neutral"></div>
+                                <span style="color: #cecece;"> Neutral</span>
+                            </li>
+                            <li class="public-broadcaster label-item">
+                                <div class="label-box" id="public-broadcaster"></div>
+                                <span style="color: #cecece;">Public Broadcaster</span>
+                            </li>
+                            <li class="gov-institution label-item">
+                                <div class="label-box" id="gov-institution"></div>
+                                <span style="color: #cecece;">Gov't Institution</span>
+                            </li>
+                            <li class="center-right label-item">
+                                <div class="label-box" id="center-right"></div>
+                                <span style="color: #cecece;">Center-right</span>
+                            </li>
+                            <li class="right-wing label-item">
+                                <div class="label-box" id="right-wing"></div>
+                                <span style="color: #cecece;">Right-wing</span>
+                            </li>
+                            <li class="pro-government label-item">
+                                <div class="label-box" id="pro-government"></div>
+                                <span style="color: #cecece;">Pro-Government</span>
+                            </li>
+                            <li class="gov-propaganda label-item">
+                                <div class="label-box" id="gov-propaganda"></div>
+                                <span style="color: #cecece;">Gov't Propaganda</span>
+                            </li>
+                            <li class="indeterminate label-item">
+                                <div class="label-box" id="indeterminate"></div>
+                                <span style="color: #cecece;">Indeterminate</span>
+                            </li>
+                            <li class="pending label-item">
+                                <div class="label-box" id="pending"></div>
+                                <span style="color: #cecece;">Pending</span>
+                            </li>
+                            <li>
+                                <p class="unselect-all">Unselect all</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr class="filter-hr"></hr>
+                    <div class="label-section">
+                        <label class="filter-label" style="color:white">Type of content</label>
+                        <ul>
+                            <li class="selectable selected" data-type="all">All</li>
+                            <li class="selectable" data-type="news_articles">News articles</li>
+                            <li class="selectable" data-type="press_releases">Press releases</li>                            
+                        </ul>
+                    </div>
+                    <hr class="filter-hr"></hr>
+                    
+                </div>
+                <div class="content">
+                    <div class="stats">
+                        <h2 style="font-weight: 600;", class="article-box-title">Number of Matching Articles: <a id="numOfArticles"></a></h2>
+                        <hr class="article-hr"></hr>
+                    </div>
+                    <div class="articles">
+                        <div id="article-container"></div>
+                        <div id="pagination-controls"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    <div class="footer">
+        <p class="footer" style="font-size: 15px;">Team Deadlock @ HACKATON BRNO 02 2025</p>
+    </div>
+</body>
+</html>

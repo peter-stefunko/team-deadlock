@@ -1,0 +1,594 @@
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background-color: #2b2d31;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%); /* Makes it white */
+  cursor: pointer;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+}
+
+input {
+  background: #2b2d31;
+}
+input::placeholder {
+  color: #8b988a;
+}
+.navbar {
+  height: 79.89px;
+  margin: 0px 116px;
+  padding: 24px 32px;
+}
+#navlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbuttonspace {
+  margin-left: 30px;
+}
+.navbuttons {
+  display: flex;
+  align-items: center;
+}
+ul li a {
+  font-weight: bold;
+}
+
+#navlist {
+  list-style-type: none;
+}
+
+#discordbutton {
+  color: #508625;
+}
+
+#logoutbutton {
+  color: black;
+  background-color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1000px;
+}
+
+
+.footer {
+  margin: 7px 0px;
+  text-align: center;
+  align-items: center;
+  color: #36383d;
+}
+
+.footerimg {
+  width: 25px;
+  height: 25px;
+  vertical-align: -6px;
+  margin-right: 8px;
+}
+.underlined {
+  text-decoration: underline;
+  margin: 0 8;
+}
+
+#menubutton {
+  color: white;
+}
+
+.searchtitle {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.search-container-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #3da12c;
+  border-radius: 30px;
+  overflow: hidden;
+  width: 700px;
+  height: 48px;
+  margin-right: 10px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  outline: none;
+  color: #ddebdc;
+  margin-left: 10px;
+}
+
+.generate-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f6700;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  height: 48px;
+  width: 50px;
+}
+
+.generate-button:hover {
+  background-color: #158e00;
+}
+
+.search-button {
+  background-color: #0f6700;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  height: 48px;
+  width: 150px;
+}
+
+.search-button:hover {
+  background-color: #158e00;
+}
+
+.search-tips {
+  font-size: 14px;
+  color: #34495e;
+  text-decoration: none;
+}
+
+.search-tips:hover {
+  text-decoration: underline;
+}
+
+#bighr {
+  width: 80%;
+  border: 0.5px solid #515155;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+.sidebar {
+  width: 275;
+  margin-left: 148px;
+}
+.content {
+  width: 893px;
+  margin-right: 148px;
+}
+.stats {
+  border-radius: 8px;
+}
+.articles {
+  padding: 20px;
+}
+.article {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.filter-label {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+.date-filter {
+  width: 275px;
+  height: 48px;
+  border: 2px solid #cecece;
+  border-radius: 0.375rem;
+  padding: 0 15;
+  margin-bottom: 20;
+  color: white;
+}
+.date-filter:hover {
+  cursor: text;
+}
+.filter-hr {
+  margin: 0;
+  margin-bottom: 15px;
+  border: 0.5px solid #515155;
+}
+
+.article-box-title {
+  font-size: 24px;
+  text-align: center;
+}
+
+.article-hr {
+  border: 0.5px solid #515155;
+  width: 100%;
+}
+
+.graph-placeholder {
+  width: 893px;
+  height: 96px;
+}
+
+.label-section ul {
+  padding: 0;
+  list-style: none;
+}
+.label-item {
+  color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.label-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 0.125rem;
+  margin-right: 0.5rem;
+  background: #ccc;
+}
+
+.label-item {
+  font-size: 14px;
+}
+
+/* FARBY */
+#left-wing {
+  background-color: #0070c0ff;
+}
+#center-left {
+  background-color: #a7d9ff;
+}
+#neutral {
+  background-color: #f9eedb;
+}
+#public-broadcaster {
+  background-color: #ffd966;
+}
+#gov-institution {
+  background-color: #e8891d;
+}
+#center-right {
+  background-color: #ed9993;
+}
+#right-wing {
+  background-color: #bc291e;
+}
+#pro-government {
+  background-color: #a35d11;
+}
+#gov-propaganda {
+  background-color: #000000;
+}
+#indeterminate {
+  background-color: #d9d9d9;
+}
+#pending {
+  background-color: #a1a1aa;
+}
+/* //FARBY */
+
+.unselect-all {
+  font-size: 14px;
+  color: #cecece;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.unselect-all:hover {
+  text-decoration: none;
+}
+
+/*  aaaaaaa*/
+#pagination-controls {
+  display: flex;
+  justify-content: center; /* Centers buttons horizontally */
+  margin-top: 20px; /* Adds spacing */
+}
+
+/* Styling for Next Button */
+.pagination-button.next {
+  background-color: white; /* Blue color */
+  color: black;
+  border-radius: 1000px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  width: 80px;
+  height: 44px;
+  margin: 5px;
+  margin-top: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination-button.next:hover {
+  background-color: #7f7f7f; /* Darker blue on hover */
+}
+
+/* Styling for Previous Button */
+.pagination-button.prev {
+  background-color: white; /* Blue color */
+  border-radius: 1000px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  width: 107.77px;
+  height: 44px;
+  margin: 5px;
+  margin-top: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination-button.prev:hover {
+  background-color: #7f7f7f; /* Darker green on hover */
+}
+
+.selected-label-box {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0
+  ) !important; /* Make background transparent */
+  border: 2px solid !important; /* Keep border visible */
+  border-color: inherit !important; /* Maintain original color */
+  opacity: 1; /* Ensure border is fully visible */
+}
+
+.label-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 0.125rem;
+  margin-right: 0.5rem;
+  border: 2px solid transparent; /* Default: No visible border */
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+/* When label is inactive, background disappears, and border takes its place */
+.selected-label-box {
+  background-color: transparent !important; /* Hide background */
+  border-width: 2px !important; /* Make border visible */
+  border-style: solid !important; /* Ensure it's solid */
+}
+
+/* Assign each label its respective border color */
+#left-wing.selected-label-box {
+  border-color: #0070c0ff !important;
+}
+#center-left.selected-label-box {
+  border-color: #a7d9ff !important;
+}
+#neutral.selected-label-box {
+  border-color: #f9eedb !important;
+}
+#public-broadcaster.selected-label-box {
+  border-color: #ffd966 !important;
+}
+#gov-institution.selected-label-box {
+  border-color: #e8891d !important;
+}
+#center-right.selected-label-box {
+  border-color: #ed9993 !important;
+}
+#right-wing.selected-label-box {
+  border-color: #bc291e !important;
+}
+#pro-government.selected-label-box {
+  border-color: #a35d11 !important;
+}
+#gov-propaganda.selected-label-box {
+  border-color: #000000 !important;
+}
+#indeterminate.selected-label-box {
+  border-color: #d9d9d9 !important;
+}
+#pending.selected-label-box {
+  border-color: #a1a1aa !important;
+}
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.clear-filters,
+.apply-filters {
+  background-color: #2b2d31;
+  border: 1px solid #515155;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 1000px;
+  width: 87px;
+  height: 36px;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.clear-filters:hover {
+  background-color: rgb(180, 50, 50);
+  color: white;
+  border: 1px solid rgb(180, 50, 50);
+}
+
+.apply-filters:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+.clear-filters span {
+  vertical-align: middle; /* Aligns the '×' vertically with text */
+  display: inline-block; /* Ensures proper spacing */
+  margin-right: 5px; /* Space between '×' and text */
+  vertical-align: -2px;
+}
+
+.selectable {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Create a hollow circle */
+.selectable::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px; /* Outer circle size */
+  height: 14px;
+  border: 1px solid #cecece; /* Hollow outer circle */
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Create the inner filled dot (default hidden) */
+.selectable::after {
+  content: "";
+  position: absolute;
+  left: 3.5; /* Adjust placement */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 9px; /* Inner dot size */
+  height: 9px;
+  background-color: transparent; /* Default: Invisible */
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+/* When an item is selected, fill the inner dot */
+.selectable.selected::after {
+  background-color: #cecece;
+}
+
+/* Tooltip Styling */
+/* Tooltip Styling */
+.tooltip {
+  top: 100%;  /* Positions it below the target */
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  background-color: #515155;
+  color: rgb(233, 233, 233);
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 1000px;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 1000;
+  pointer-events: none; /* Prevents blocking interactions */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.deselected .label-box {
+  background-color: transparent !important; /* Hide background */
+  border: 2px solid currentColor !important; /* Use current color for visibility */
+  opacity: 1; /* Ensure visibility */
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.category {
+  background-color: #2b2d31;
+  border: 1px solid #515155;
+  color: white;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 1000px;
+  width: auto;
+  padding: 0 15px;
+  height: 36px;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.category.selected {
+  background-color: #bbbbbb;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 60px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#ffffff 90%,#0000);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+
+.search-input::placeholder {
+  transition: filter 0.3s ease-in-out;
+}
+
+.blur-placeholder::placeholder {
+  filter: blur(5px);
+}
+.blur{
+  filter: blur(5px);
+}

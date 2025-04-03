@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "deadlock"
+version = "0.1.0"
+description = ""
+authors = ["Erik Capkovic <erikcapkovic@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.115.8"
+uvicorn = "^0.34.0"
+sqlalchemy = "^2.0.38"
+alembic = "^1.14.1"
+pydantic = "^2.10.6"
+pydantic-settings = "^2.7.1"
+yarl = "^1.18.3"
+asyncpg = "^0.30.0"
+gunicorn = "^23.0.0"
+pgvector = "^0.3.6"
+psycopg2 = "^2.9.10"
+openai = "^1.65.1"
+tiktoken = "^0.9.0"
+	
+[tool.pyright]
+include = ["src"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[virtualenvs]
+in-project = true

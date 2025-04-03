@@ -1,0 +1,12 @@
+{
+    email erikcapkovic@gmail.com
+}
+{$DOMAIN} {
+    redir http://{$DOMAIN}{uri}
+}
+
+http://{$DOMAIN} {
+    root * /var/www/html
+    file_server
+}
+
