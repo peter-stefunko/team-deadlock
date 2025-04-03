@@ -1,5 +1,5 @@
 # Team Deadlock
-Repository for the team Deadlock for Newsmatics Hackathon 2025
+**Copy** of the repository for the team Deadlock for Newsmatics Hackathon 2025
 - Team captain: Erik Čapkovič
 - Authors: Erik Čapkovič, Lukáš Denkócy, Rastistlav Kollár, Lukáš Medovič, Peter Štefunko
 
